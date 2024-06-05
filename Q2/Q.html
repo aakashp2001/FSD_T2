@@ -20,8 +20,8 @@
     <form method="get" action="/result">
         Number 1: <input type="number" name="num1" min=0><br><br>
         Number 2: <input type="number" name="num2" min=0><br><br>
-        <select name="options">
-            <option value="select" disabled selected>--Select--</option>
+        <select name="options" required>
+            <option value="select" disabled selected hidden>--Select--</option>
             <option value="sub">Subtraction</option>
             <option value="mul">Multiplication</option>
             <option value="add">Addition</option>
