@@ -18,17 +18,39 @@ var express = require('express')
 
 var app = express()
 
-app.use(express.urlencoded({extended:false}))
+app.use(express.urlencoded({ extended: false }))
 
-app.get('/', function(req, res){
+app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html')
 })
 
-app.get('/login',(req,res)=>{
-    res.write(`Welcome ${req.body.name}`)
+app.post('/logins', (req, res, next) => {
+    res.set('content-type','text/html')
+    res.write(`Welcome ${req.body.name}, and your email id is: ${req.body.email}`)
+    next()
+    }
+    , (req, res) => {
+        if (req.body.subs) {
+            res.write('<br>Thank you for the subscription')
+            res.write('<br><a href="/">Logout</a>')
+        }
+        else {
+            res.write('<br>You can subscribe to get daily updates')
+            res.write('<br><a href="/subscribe">Subscribe</a>')
+            res.write('<br><a href="/">Logout</a>')
+        }
+        console.log(req.body.subs)
+        res.send()
+    })
+
+app.get('/subscribe', (req, res) => {
+    res.set('content-type','text/html')
+    res.write('<br>Thank you for the subscription')
+    res.write('<br><a href="/">Logout</a>')
+    res.send()
 })
 
-app.listen(3022,()=>{
+app.listen(3022, () => {
     console.log('http://localhost:3022');
 })
 
