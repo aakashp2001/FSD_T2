@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+    head
+        title PUG Tutorial
+    body 
+        // 1
+        h1 LJU 
+        // 2
+        p Lets learn PUG
+        // 3
+        p
+            i Thank you 
+        // 4
+        h5(style='text-transform:uppercase;color:red') Hello 
+        //5
+        p 
+            |This file 
+            |will not read
+            |if you don't have a .pug file
+            |in the same folder as this file.
+            |You can create a .pug file
+            |in the same folder as this file.
+            //6
+            ul 
+                li Mango 
+                li Apple
+            
+            a(
+                href='https://www.google.com'
+                target='_blank'
+                style='text-decoration:none;color:blue'
+            ) tag
+
+            table(border='1px solid black')
+                tr
+                    th First Name
+                    th Last Name
+                tr
+                    td Jane
+                    td Doe

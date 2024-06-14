@@ -1,0 +1,13 @@
+//- Create 1 pug file which contains a text field and an email field. By submitting the form on next page called /data, submitted data should be displayed
+
+doctype html
+html(lang="en")
+    head
+        title Pug Question
+    body 
+        form(action="data", method="get") 
+            label(for="name") name 
+            input(type="text", name="Name")  
+            label(for="email") email
+            input(type="email", name="Email")  
+            input(type="submit") 

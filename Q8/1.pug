@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head 
+        title Q8 
+    body 
+        form(action="data", method="get") 
+            label(for="name") name 
+            input(type="text", name="Name")  
+            br
+            label(for="email") email
+            input(type="email", name="Email")  
+            br
+            label 
+                input(type="radio", name="course", value="CE") 
+                span CE
+            label  
+                input(type="radio", name="course", value="IT")
+                span IT
+            label 
+                input(type="radio", name="course", value="CSE")
+                span CSE
+            br
+            input(type="submit") 
