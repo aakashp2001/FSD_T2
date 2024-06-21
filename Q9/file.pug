@@ -1,0 +1,10 @@
+doctype html
+html(lang="en")
+    head
+        title file.pug
+    body 
+        form(action="/upload", method="post", enctype='multipart/form-data') 
+            h3(style='color:red') Upload your CV 
+            input(type="file", name="file" accept='.pdf')
+            br
+            input(type="submit")
